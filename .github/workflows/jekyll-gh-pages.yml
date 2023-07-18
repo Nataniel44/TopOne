@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: TopOne
 
 on:
   # Runs on pushes targeting the default branch
@@ -46,6 +46,6 @@ jobs:
         with:
           # Upload dist repository
           path: './dist'
-      - name: Deploy to GitHub Pages
+      - name: TopOne
         id: deployment
         uses: actions/deploy-pages@v1
