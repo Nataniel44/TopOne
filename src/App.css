@@ -1,0 +1,22 @@
+.bg-custom1{
+  background-color: #AF7108;
+}
+.bg-custom2{
+  height: 7vh;
+  background-color: #F19A0B;
+}
+.bg-cont{
+  background-color: #F19A0B;
+}
+.top-bar, .bottom-bar {
+  height: 50%;
+}
+.custom-h{
+  height:86vh ;
+}
+.btn-fixed-width {
+  width: 200px; /* Ajusta el ancho según tus necesidades */
+}
+.logo{
+  width: 25%;
+}
