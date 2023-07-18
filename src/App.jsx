@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
-import Page1 from './page1';
-import Menu from './Menu';
+import Page1 from './components/page1';
+import Menu from './components/Menu';
 
 const App = () => {
   return (
