@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 const Page1 = () => {
   return (
     <>
-      <header className="bg-custom2">
+      <header className="shadow p-3 ">
         <p className="m-0 "></p>
       </header>
-      <main className="bg-custom1">
+      <main className="bg-custom1 ">
         <section className="d-flex flex-column align-items-center justify-content-center justify-content-center custom-h">
           <div className="col-12 col-md-6 col-lg-6 d-flex justify-content-center  ">
             <img src="src/img/33.jpg" alt="" className=" rounded-circle logo" />

@@ -50,6 +50,8 @@ const Hamburguesas = () => {
   return (
     <div className="container vh-100 bg-cont text-center d-flex flex-wrap justify-content-center align-items-center">
       <h1>Tienda de Hamburguesas</h1>
+      <div className="container">
+
       <div className="row">
         <div className="col-6">
           <div className="card">
@@ -57,7 +59,7 @@ const Hamburguesas = () => {
               src="src/img/3.jpg"
               className="card-img-top"
               alt="Hamburguesa 1"
-            />
+              />
             <div className="card-body">
               <h5 className="card-title">Hamburguesa Clásica</h5>
               <p className="card-text">
@@ -79,7 +81,7 @@ const Hamburguesas = () => {
               src="src/img/3.jpg"
               className="card-img-top"
               alt="Hamburguesa 2"
-            />
+              />
             <div className="card-body">
               <h5 className="card-title">Hamburguesa BBQ</h5>
               <p className="card-text">
@@ -89,7 +91,7 @@ const Hamburguesas = () => {
               <button
                 className="btn btn-primary"
                 onClick={() => agregarAlCarrito('Hamburguesa BBQ', 12)}
-              >
+                >
                 Agregar al Carrito
               </button>
             </div>
@@ -104,8 +106,8 @@ const Hamburguesas = () => {
         <ul className="list-group">
           {carrito.map((item, index) => (
             <li
-              className="list-group-item d-flex justify-content-between"
-              key={index}
+            className="list-group-item d-flex justify-content-between"
+            key={index}
             >
               <span>
                 {item.nombre} - ${item.precio} - Cantidad: {item.cantidad}
@@ -113,7 +115,7 @@ const Hamburguesas = () => {
               <button
                 className="btn btn-danger"
                 onClick={() => eliminarDelCarrito(index)}
-              >
+                >
                 Eliminar
               </button>
             </li>
@@ -129,6 +131,7 @@ const Hamburguesas = () => {
           </div>
         )}
       </div>
+        </div>
     </div>
   );
 };

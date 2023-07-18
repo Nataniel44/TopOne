@@ -1,15 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import './App.css';
+import { createRoot } from 'react-dom/client';
 import App from './App';
 import { HashRouter } from 'react-router-dom';
-ReactDOM.render(
+
+const container = document.getElementById('app');
+const root = createRoot(container);
+
+root.render(
   <React.StrictMode>
     <HashRouter>
-      <App />
+      <App tab="home" />
     </HashRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
