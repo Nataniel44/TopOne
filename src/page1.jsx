@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import myImage from 'src/img/my-image.jpg';
+import myImage from 'src/img/33.jpg';
 
 const Page1 = () => {
   return (
