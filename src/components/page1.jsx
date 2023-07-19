@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Page1 = () => {
   return (
     <>
-      <header className="shadow p-3 ">
+      <header className="bg-custom2 shadow p-3 ">
         <p className="m-0 "></p>
       </header>
       <main className="bg-custom1 ">
