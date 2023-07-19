@@ -30,13 +30,13 @@ const Page1 = () => {
       <footer className="bg-custom2 d-flex gap-3 flex-wrap justify-content-center align-items-center">
         <div className="row">
           <div className="col-6">
-            <a href="https://wa.me/123456789" target="_blank" rel="noreferrer">
+            <a href="https://wa.me/3755390616" target="_blank" rel="noreferrer">
               <i className="fab fa-whatsapp fa-lg text-black"></i>
             </a>
           </div>
           <div className="col-6">
             <a
-              href="https://www.instagram.com/tu_usuario/"
+              href="https://www.instagram.com/top_one_burgers/"
               target="_blank "
               rel="noreferrer"
             >
