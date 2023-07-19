@@ -9,8 +9,7 @@ const Page1 = () => {
       <main className="bg-custom1 ">
         <section className="d-flex flex-column align-items-center justify-content-center justify-content-center custom-h">
           <div className="col-12 col-md-6 col-lg-6 d-flex justify-content-center  ">
-            <img src="" alt="" className=" rounded-circle logo" />
-            <h1>gola</h1>
+            <img src="./img/33.jpg" alt="" className=" rounded-circle logo" />
           </div>
           <h1 className="text-center text-light display-1 text-black">
             Top One Burgers
