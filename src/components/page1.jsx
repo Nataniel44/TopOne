@@ -15,7 +15,7 @@ const Page1 = () => {
             Top One Burgers
           </h1>
           <div className="col-7 mx-auto">
-            <p className="text-light text-center text-white-50 text-wrap">
+            <p className="text-dark text-center text-white-50 text-wrap">
               <small>Las mejores hamburguesas de la ciudad.</small>
             </p>
           </div>
@@ -23,7 +23,9 @@ const Page1 = () => {
             <Link to="/menu" className="btn btn-warning">
               Menu de hamburguesas!
             </Link>
-            <button className="btn btn-warning">Nuestro WhatsApp!</button>
+            <button className="btn btn-warning" ><a href="https://wa.me/3755390616" target="_blank" rel="noreferrer">
+              <i className="fab fa-whatsapp fa-lg text-black"></i>
+            </a></button>
           </div>
         </section>
       </main>
