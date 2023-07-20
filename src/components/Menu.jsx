@@ -79,7 +79,7 @@ const Hamburguesas = () => {
         </header>
 <main className='bg-custom1'>
   <div className="container py-4 text-center ">
-        <h1>Tienda de Hamburguesas</h1>
+        <h1>Menú</h1>
         <div className="row row-cols-2 row-cols-md-2 row-cols-lg-5 g-3">
           {hamburguesasData.map((hamburguesa, index) => (
             <div className="col" key={index}>
