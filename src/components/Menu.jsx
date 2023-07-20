@@ -5,32 +5,32 @@ const hamburguesasData = [
     nombre: 'Classic',
     precio: 1000,
     
-    imagen: '/classic.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
+    imagen: '/img/classic.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
   },
   {
     nombre: 'Argenta',
     precio: 1200,
-    imagen: '/argen.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
+    imagen: '/img/argen.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
   },
   {
     nombre: 'veggie',
     precio: 1000,
-    imagen: '/veggie.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
+    imagen: '/img/veggie.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
   },
   {
     nombre: 'Chesee',
     precio: 700,
-    imagen: '/cheese.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
+    imagen: '/img/cheese.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
   },
   {
     nombre: 'Top One',
     precio: 1200,
-    imagen: '/topone.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
+    imagen: '/img/topone.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
   },
   {
     nombre: 'Hulk',
     precio: 1700,
-    imagen: '/hulk1.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
+    imagen: '/img/hulk1.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
   },
   // Agrega más hamburguesas aquí
 ];
@@ -94,7 +94,7 @@ const Hamburguesas = () => {
                   <p className="card-text">{hamburguesa.descripcion}</p>
                   <p className="card-text">Precio: ${hamburguesa.precio}</p>
                   <button
-                    className="btn btn-secondary bg-light-50  "
+                    className="btn btn-secondary bg-light-50"
                     onClick={() => agregarAlCarrito(hamburguesa.nombre, hamburguesa.precio)}
                     >
                     Agregar al Carrito
