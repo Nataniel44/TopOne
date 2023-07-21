@@ -18,6 +18,11 @@ const hamburguesasData = [
     imagen: './img/veggie.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
   },
   {
+    nombre: 'Rúcula y parmesano',
+    precio: 1200,
+    imagen: './img/rucula.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
+  },
+  {
     nombre: 'Chesee',
     precio: 700,
     imagen: './img/cheese.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
