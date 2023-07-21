@@ -6,37 +6,37 @@ const hamburguesasData = [
     nombre: 'Classic',
     precio: 1000,
     
-    imagen: './img/classic.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
+    imagen: './img-redux/classic.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
   },
   {
     nombre: 'Argenta',
     precio: 1200,
-    imagen: './img/argen.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
+    imagen: './img-redux/argen.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
   },
   {
     nombre: 'Veggie',
     precio: 1000,
-    imagen: './img/veggie.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
+    imagen: './img-redux/veggie.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
   },
   {
     nombre: 'Rúcula y parmesano',
     precio: 1200,
-    imagen: './img/rucula.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
+    imagen: './img-redux/rucula.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
   },
   {
     nombre: 'Chesse',
     precio: 700,
-    imagen: './img/cheese.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
+    imagen: './img-redux/cheese.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
   },
   {
     nombre: 'Top One',
     precio: 1200,
-    imagen: './img/topone.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
+    imagen: './img-redux/topone.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
   },
   {
     nombre: 'Hulk',
     precio: 1700,
-    imagen: './img/hulk1.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
+    imagen: './img-redux/hulk1.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
   },
   // Agrega más hamburguesas aquí
 ];
