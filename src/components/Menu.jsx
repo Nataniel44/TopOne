@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const hamburguesasData = [
   {
@@ -13,7 +14,7 @@ const hamburguesasData = [
     imagen: './img/argen.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
   },
   {
-    nombre: 'veggie',
+    nombre: 'Veggie',
     precio: 1000,
     imagen: './img/veggie.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
   },
@@ -23,7 +24,7 @@ const hamburguesasData = [
     imagen: './img/rucula.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
   },
   {
-    nombre: 'Chesee',
+    nombre: 'Chesse',
     precio: 700,
     imagen: './img/cheese.jpg' // Reemplaza con la ruta de tu imagen para esta hamburguesa
   },
@@ -55,12 +56,29 @@ const Hamburguesas = () => {
     }
   };
 
-  const eliminarDelCarrito = (index) => {
-    const nuevoCarrito = [...carrito];
-    nuevoCarrito.splice(index, 1);
-    setCarrito(nuevoCarrito);
+  const restarDelCarrito = (nombre) => {
+    const hamburguesaAEliminar = carrito.find((item) => item.nombre === nombre);
+    if (hamburguesaAEliminar) {
+      if (hamburguesaAEliminar.cantidad === 1) {
+        setCarrito((prevCarrito) =>
+          prevCarrito.filter((item) => item.nombre !== nombre)
+        );
+      } else {
+        setCarrito((prevCarrito) =>
+          prevCarrito.map((item) =>
+            item.nombre === nombre
+              ? { ...item, cantidad: item.cantidad - 1 }
+              : item
+          )
+        );
+      }
+    }
   };
-
+  const eliminarTodasDelCarrito = (nombre) => {
+    setCarrito((prevCarrito) =>
+      prevCarrito.filter((item) => item.nombre !== nombre)
+    );
+  };
   const calcularPrecioTotal = () => {
     return carrito.reduce((total, item) => total + item.precio * item.cantidad, 0);
   };
@@ -79,11 +97,14 @@ const Hamburguesas = () => {
   };
 
   return (<>
-      <header className="bg-custom2 shadow p-3 " style={{ zIndex: 1 }} >
-          <p className="m-0 "></p>
+      <header className="bg-custom2 shadow p-1 d-flex align-items-center justify-content-center  container" style={{ zIndex: 1 }} >
+
+            <Link to="/#" className="btn btn-warning">
+              Top One Burger's
+            </Link>
         </header>
-<main className='bg-custom1'>
-  <div className="container py-4 text-center ">
+<main className='bg-custom1 container shadow p-3 mb-5    rounded '>
+  <div className="container py-4 text-center">
         <h1>Menú</h1>
         <div className="row row-cols-2 row-cols-md-2 row-cols-lg-5 g-3">
           {hamburguesasData.map((hamburguesa, index) => (
@@ -115,16 +136,19 @@ const Hamburguesas = () => {
             <p className='bg-danger border border-secondary '>Tu carrito está vacío</p>
             ) : (
               <ul className="list-group">
-              {carrito.map((item, index) => (
-                <li className="list-group-item d-flex justify-content-between" key={index}>
-                  <span>
-                    {item.nombre} - ${item.precio} - Cantidad: {item.cantidad}
-                  </span>
-                  <button className="btn btn-danger" onClick={() => eliminarDelCarrito(index)}>
-                    Eliminar
-                  </button>
-                </li>
-              ))}
+{carrito.map((item, index) => (
+  <li className="list-group-item d-flex justify-content-between" key={index}>
+    <span>
+      {item.nombre} - ${item.precio} - Cantidad: {item.cantidad}
+    </span>
+    <button
+      className="btn btn-danger"
+      onClick={() => restarDelCarrito(item.nombre)}
+    >
+      Eliminar
+    </button>
+  </li>
+))}
             </ul>
           )}
           {carrito.length > 0 && (
