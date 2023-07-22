@@ -103,7 +103,7 @@ const Hamburguesas = () => {
               Top One Burger's
             </Link>
         </header>
-<main className='bg-custom1 container shadow p-3 '>
+<main className='bg-custom1 container shadow  '>
   <div className="container py-4 text-center">
         <h1 className=' subtext'>Menú</h1>
         <p>Aca podes realizar tu pedido por whatsapp</p>
