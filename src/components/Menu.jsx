@@ -106,7 +106,7 @@ const Hamburguesas = () => {
 <main className='bg-custom1 container shadow  '>
   <div className="container py-4 text-center">
         <h1 className=' subtext'>Menú</h1>
-        <p>Aca podes realizar tu pedido por whatsapp</p>
+       
         <div className="row row-cols-2 row-cols-md-2 row-cols-lg-5 g-3">
           {hamburguesasData.map((hamburguesa, index) => (
             <div className="col" key={index}>
