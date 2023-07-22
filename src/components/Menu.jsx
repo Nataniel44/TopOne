@@ -97,15 +97,16 @@ const Hamburguesas = () => {
   };
 
   return (<>
-      <header className="bg-custom2 shadow p-1 d-flex align-items-center justify-content-center  container" style={{ zIndex: 1 }} >
+      <header className="bg-custom2 shadow p-1 d-flex align-items-center justify-content-center  container">
 
-            <Link to="/#" className="btn btn-warning">
+            <Link to="/#" className="btn text">
               Top One Burger's
             </Link>
         </header>
-<main className='bg-custom1 container shadow p-3 mb-5    rounded '>
+<main className='bg-custom1 container shadow p-3 '>
   <div className="container py-4 text-center">
-        <h1>Menú</h1>
+        <h1 className=' subtext'>Menú</h1>
+        <p>Aca podes realizar tu pedido por whatsapp</p>
         <div className="row row-cols-2 row-cols-md-2 row-cols-lg-5 g-3">
           {hamburguesasData.map((hamburguesa, index) => (
             <div className="col" key={index}>
@@ -115,7 +116,7 @@ const Hamburguesas = () => {
                   className="card-img-top img-fluid" // Agrega la clase "img-fluid" para hacer la imagen responsiva
                   alt={hamburguesa.nombre}
                   />
-                <div className="card-body">
+                <div className="card-body bg-warning text-light">
                   <h5 className="card-title">{hamburguesa.nombre}</h5>
                   <p className="card-text">{hamburguesa.descripcion}</p>
                   <p className="card-text">Precio: ${hamburguesa.precio}</p>
@@ -133,7 +134,9 @@ const Hamburguesas = () => {
         <div className="mt-4">
           <h3>Carrito de Compras</h3>
           {carrito.length === 0 ? (
-            <p className='bg-danger border border-secondary '>Tu carrito está vacío</p>
+            <div className="div d-flex justify-content-center">
+              <p className='bg-danger border border-secondary p-1  '>Tu carrito está vacío</p>
+            </div>
             ) : (
               <ul className="list-group">
 {carrito.map((item, index) => (
@@ -162,9 +165,24 @@ const Hamburguesas = () => {
         </div>
       </div>
           </main>
-          <footer className="bg-custom2 shadow p-3 " style={{ zIndex: 1 }} >
-          <p className="m-0 "></p>
-        </footer>
+          <footer className="bg-custom2 shadow p-1 d-flex align-items-center justify-content-center  container">
+        <div className="row">
+          <div className="col-6">
+            <a href="https://wa.me/3755390616" target="_blank" rel="noreferrer">
+              <i className="fab fa-whatsapp fa-lg text-black"></i>
+            </a>
+          </div>
+          <div className="col-6">
+            <a
+              href="https://www.instagram.com/top_one_burgers/"
+              target="_blank "
+              rel="noreferrer"
+            >
+              <i className="fab fa-instagram fa-lg text-black"></i>
+            </a>
+          </div>
+        </div>
+      </footer>
 
           </>
   );
