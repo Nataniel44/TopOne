@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 const Page1 = () => {
   return (
     <>
-      <header className="bg-custom2 shadow p-3 ">
-        <p className="m-0 "></p>
-      </header>
+      <nav className="navbar navbar-light bg-cont p-0  ">
+        <a className="navbar-brand p-0 d-flex m-1" href="#">
+          <img src="./img/logo.jpg" alt="" width="67" height="" />
+        </a>
+      </nav>
       <main className="bg-custom1 ">
         <section className="d-flex flex-column align-items-center justify-content-center justify-content-center custom-h">
           <div className="col-12 col-md-6 col-lg-6 d-flex justify-content-center  ">

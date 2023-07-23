@@ -1,22 +1,23 @@
-.bg-custom1{
-  background-color: #AF7108;
+.bg-custom1 {
+  background-color: #af7108;
 }
-.bg-custom2{
+.bg-custom2 {
   height: 7vh;
-  background-color: #F19A0B;
+  background-color: #f19a0b;
 }
-.bg-cont{
-  background-color: #F19A0B;
+.bg-cont {
+  background-color: #f19a0b;
 }
-.top-bar, .bottom-bar {
+.top-bar,
+.bottom-bar {
   height: 50%;
 }
-.custom-h{
-  height:86vh ;
+.custom-h {
+  height: 86vh;
 }
 .btn-fixed-width {
   width: 200px; /* Ajusta el ancho según tus necesidades */
 }
-.logo{
+.logo {
   width: 25%;
 }
