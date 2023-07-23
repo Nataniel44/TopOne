@@ -117,73 +117,76 @@ const Hamburguesas = () => {
       </header>
       <main className="bg-custom1 container shadow">
         <div className="container py-4 text-center">
-          <h1 className="subtext">Menú</h1>
+          <div className="bg-cont p-3">
+            <h1 className="subtext">Menú</h1>
 
-          <div className="row row-cols-2 row-cols-md-2 row-cols-lg-5 g-3">
-            {hamburguesasData.map((hamburguesa, index) => (
-              <div
-                className="col"
-                key={index}
-                onClick={() =>
-                  agregarAlCarrito(hamburguesa.nombre, hamburguesa.precio)
-                }
-              >
-                <div className="card bg-warning ">
-                  <img
-                    src={hamburguesa.imagen}
-                    className="card-img-top img-fluid"
-                    alt={hamburguesa.nombre}
-                  />
-                  <div className="card-body  text-light">
-                    <h5 className="card-title">{hamburguesa.nombre}</h5>
-                    <p className="card-text">{hamburguesa.descripcion}</p>
-                    <p className="card-text">Precio: ${hamburguesa.precio}</p>
-                    <button className="btn btn-secondary bg-light-50">
-                      Agregar al Carrito
-                    </button>
+            <div className="row row-cols-2 row-cols-md-2 row-cols-lg-5 g-3">
+              {hamburguesasData.map((hamburguesa, index) => (
+                <div
+                  className="col"
+                  key={index}
+                  onClick={() =>
+                    agregarAlCarrito(hamburguesa.nombre, hamburguesa.precio)
+                  }
+                >
+                  <div className="card bg-warning ">
+                    <img
+                      src={hamburguesa.imagen}
+                      className="card-img-top img-fluid"
+                      alt={hamburguesa.nombre}
+                    />
+                    <div className="card-body  text-light">
+                      <h5 className="card-title">{hamburguesa.nombre}</h5>
+                      <p className="card-text">{hamburguesa.descripcion}</p>
+                      <p className="card-text">Precio: ${hamburguesa.precio}</p>
+                      <button className="btn btn-secondary bg-light-50">
+                        Agregar al Carrito
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <div className="mt-4" ref={compraSectionRef} id="compra">
-            <h3>Carrito de Compras</h3>
-            {carrito.length === 0 ? (
-              <div className="div d-flex justify-content-center">
-                <p className="bg-danger border border-secondary p-1">
-                  Tu carrito está vacío
-                </p>
-              </div>
-            ) : (
-              <ul className="list-group">
-                {carrito.map((item, index) => (
-                  <li
-                    className="list-group-item d-flex justify-content-between"
-                    key={index}
-                  >
-                    <span>
-                      {item.nombre} - ${item.precio} - Cantidad: {item.cantidad}
-                    </span>
-                    <button
-                      className="btn btn-danger"
-                      onClick={() => restarDelCarrito(item.nombre)}
+            <div className="mt-4" ref={compraSectionRef} id="compra">
+              <h3>Carrito de Compras</h3>
+              {carrito.length === 0 ? (
+                <div className="div d-flex justify-content-center">
+                  <p className="bg-danger border border-secondary p-1">
+                    Tu carrito está vacío
+                  </p>
+                </div>
+              ) : (
+                <ul className="list-group">
+                  {carrito.map((item, index) => (
+                    <li
+                      className="list-group-item d-flex justify-content-between"
+                      key={index}
                     >
-                      Eliminar
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            )}
+                      <span>
+                        {item.nombre} - ${item.precio} - Cantidad:{' '}
+                        {item.cantidad}
+                      </span>
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => restarDelCarrito(item.nombre)}
+                      >
+                        Eliminar
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
 
-            {carrito.length > 0 && (
-              <div className="mt-4">
-                <h4>Precio Total: ${calcularPrecioTotal()}</h4>
-                <button className="btn btn-success" onClick={realizarPedido}>
-                  Realizar Pedido por WhatsApp
-                </button>
-              </div>
-            )}
+              {carrito.length > 0 && (
+                <div className="mt-4">
+                  <h4>Precio Total: ${calcularPrecioTotal()}</h4>
+                  <button className="btn btn-success" onClick={realizarPedido}>
+                    Realizar Pedido por WhatsApp
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </main>
