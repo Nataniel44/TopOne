@@ -3,10 +3,15 @@ import { Link } from 'react-router-dom';
 const Page1 = () => {
   return (
     <>
-      <header className="bg-custom2 shadow p-1 d-flex align-items-center justify-content-center  container" style={{ zIndex: 1 }} >
-      <Link to="/#" className="btn text">
-              Top One Burger's
-            </Link>
+    <div className="cont">
+
+      <header
+        className="bg-custom2 shadow p-1 d-flex align-items-center justify-content-center  container"
+        style={{ zIndex: 1 }}
+        >
+        <Link to="/#" className="btn text">
+          Top One Burgers
+        </Link>
       </header>
       <main className="bg-custom1 container shadow   ">
         <section className="d-flex flex-column align-items-center justify-content-center justify-content-center custom-h">
@@ -25,9 +30,15 @@ const Page1 = () => {
             <Link to="/menu" className="btn btn-warning">
               Menu de hamburguesas!
             </Link>
-            <button className="btn btn-warning" ><a href="https://wa.me/3755390616" target="_blank" rel="noreferrer">
-              <i className="fab fa-whatsapp fa-lg text-black"></i>
-            </a></button>
+            <button className="btn btn-warning">
+              <a
+                href="https://wa.me/3755390616"
+                target="_blank"
+                rel="noreferrer"
+                >
+                <i className="fab fa-whatsapp fa-lg text-black"></i>
+              </a>
+            </button>
           </div>
         </section>
       </main>
@@ -43,12 +54,13 @@ const Page1 = () => {
               href="https://www.instagram.com/top_one_burgers/"
               target="_blank "
               rel="noreferrer"
-            >
+              >
               <i className="fab fa-instagram fa-lg text-black"></i>
             </a>
           </div>
         </div>
       </footer>
+              </div>
     </>
   );
 };

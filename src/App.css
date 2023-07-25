@@ -1,35 +1,79 @@
-.bg-custom1{
-  
-  background-color: #AF7108;
+.bg-custom1 {
+  background-color: #af7108;
 }
-.bg-menu{
-  background-color: #AF7108;  
+.bg-menu {
+  background-color: #af7108;
 }
-.bg-custom2{
+.bg-custom2 {
   height: 7vh;
-  background-color: #F19A0B;
+  background-color: #f19a0b;
 }
-.bg-cont{
-  background-color: #F19A0B;
+.bg-cont {
+  background-color: #f19a0b;
 }
-.top-bar, .bottom-bar {
+.top-bar,
+.bottom-bar {
   height: 50%;
 }
-.custom-h{
-  height:86vh ;
+.custom-h {
+  height: 86vh;
 }
 .btn-fixed-width {
   width: 200px; /* Ajusta el ancho según tus necesidades */
 }
-.logo{
+.logo {
   width: 25%;
 }
-.text{
+.text {
   font-family: 'Pacifico', cursive;
 }
-.subtext{
-  
-font-family: 'Roboto Condensed', sans-serif;
+.subtext {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.btn-circle-flecha {
+  background: rgb(0, 0, 0);
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+/* Estilo para la flecha */
+.arrow-wrapper {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #f19a0b;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.arrow-wrapper:hover {
+  background-color: #af7108;
+}
+
+.arrow {
+  display: flex;
+  font-size: 24px;
+}
+
+/* Animación para que aparezca suavemente */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 @media screen and (max-width: 540px) {
   .conte {
