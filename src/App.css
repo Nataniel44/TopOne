@@ -31,3 +31,14 @@
   
 font-family: 'Roboto Condensed', sans-serif;
 }
+@media screen and (max-width: 540px) {
+  .conte {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 21px;
+  }
+}

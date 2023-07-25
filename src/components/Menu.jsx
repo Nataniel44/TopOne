@@ -97,6 +97,8 @@ const Hamburguesas = () => {
   };
 
   return (<>
+    <div className="conte">
+
       <header className="bg-custom2 shadow p-1 d-flex align-items-center justify-content-center  container">
 
             <Link to="/#" className="btn text">
@@ -147,7 +149,7 @@ const Hamburguesas = () => {
     <button
       className="btn btn-danger"
       onClick={() => restarDelCarrito(item.nombre)}
-    >
+      >
       Eliminar
     </button>
   </li>
@@ -177,13 +179,13 @@ const Hamburguesas = () => {
               href="https://www.instagram.com/top_one_burgers/"
               target="_blank "
               rel="noreferrer"
-            >
+              >
               <i className="fab fa-instagram fa-lg text-black"></i>
             </a>
           </div>
         </div>
       </footer>
-
+              </div>
           </>
   );
 };
