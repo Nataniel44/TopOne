@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Page1 = () => {
   return (
     <>
-    <div className="cont">
+    <div className="conte">
 
       <header
         className="bg-custom2 shadow p-1 d-flex align-items-center justify-content-center  container"

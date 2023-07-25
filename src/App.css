@@ -76,8 +76,10 @@
   }
 }
 @media screen and (max-width: 540px) {
-  
-  .cont{
+  .custom-h {
+    height: 100%;
+  }
+  .conte {
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
     margin: 0 auto;
