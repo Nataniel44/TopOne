@@ -111,7 +111,7 @@ const Hamburguesas = () => {
   return (
     <>
       <header className="bg-custom2 shadow p-1 d-flex align-items-center justify-content-center container">
-        <Link to="/#" className="btn text">
+        <Link to="/#" className=" btn text ">
           Top One Burgers
         </Link>
       </header>
