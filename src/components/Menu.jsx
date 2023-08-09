@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 const hamburguesasData = [
   {
@@ -110,17 +109,13 @@ const Hamburguesas = () => {
 
   return (
     <>
-      <header className="bg-custom2 shadow p-1 d-flex align-items-center justify-content-center container">
-        <Link to="/#" className=" btn text ">
-          Top One Burgers
-        </Link>
-      </header>
-      <main className="bg-custom1 container shadow">
-        <div className="container py-4 text-center">
-          <div className="bg-cont p-3">
-            <h1 className="subtext">Menú</h1>
+        
+      <main className="bg-custom1 container border-top border-2 border-dark" id='menu'>
+        <div className= "text-center" >
+          <div className="bg-cont p-3 mt-2">
+            <h1 className="subtext display-3">Menú</h1>
 
-            <div className="row row-cols-2 row-cols-md-2 row-cols-lg-5 g-3">
+            <div className="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3">
               {hamburguesasData.map((hamburguesa, index) => (
                 <div
                   className="col"
@@ -132,14 +127,14 @@ const Hamburguesas = () => {
                   <div className="card bg-warning ">
                     <img
                       src={hamburguesa.imagen}
-                      className="card-img-top img-fluid"
+                      className="card-img-top img-fluid border border-1 border-secondary"
                       alt={hamburguesa.nombre}
                     />
-                    <div className="card-body  text-light">
-                      <h5 className="card-title">{hamburguesa.nombre}</h5>
+                    <div className="card-body  text-black">
+                      <h5 className="card-title w-100">{hamburguesa.nombre}</h5>
                       <p className="card-text">{hamburguesa.descripcion}</p>
                       <p className="card-text">Precio: ${hamburguesa.precio}</p>
-                      <button className="btn btn-secondary bg-light-50">
+                      <button className="btn btn-secondary bg-light-50 subtext h-100 w-100">
                         Agregar al Carrito
                       </button>
                     </div>
@@ -180,7 +175,7 @@ const Hamburguesas = () => {
 
               {carrito.length > 0 && (
                 <div className="mt-4">
-                  <h4>Precio Total: ${calcularPrecioTotal()}</h4>
+                  <h4 className=''>Precio Total: <span className=''> ${calcularPrecioTotal()} </span></h4>
                   <button className="btn btn-success" onClick={realizarPedido}>
                     Realizar Pedido por WhatsApp
                   </button>
@@ -198,24 +193,6 @@ const Hamburguesas = () => {
         </div>
       )}
 
-      <footer className="bg-custom2 shadow p-1 d-flex align-items-center justify-content-center container">
-        <div className="row">
-          <div className="col-6">
-            <a href="https://wa.me/3755390616" target="_blank" rel="noreferrer">
-              <i className="fab fa-whatsapp fa-lg text-black"></i>
-            </a>
-          </div>
-          <div className="col-6">
-            <a
-              href="https://www.instagram.com/top_one_burgers/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i className="fab fa-instagram fa-lg text-black"></i>
-            </a>
-          </div>
-        </div>
-      </footer>
     </>
   );
 };
