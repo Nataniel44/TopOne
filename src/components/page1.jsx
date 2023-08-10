@@ -13,22 +13,23 @@ const Page1 = () => {
   return (
     <>
       <NavBar/>  
-      <main className="bg-custom1 container">
-        <section className="d-flex flex-column align-items-center justify-content-center vh-100 mt-5 pt-4">
-          <div className="col-12 col-md-8 col-lg-8 d-flex justify-content-center  ">
-            <img src="./img/33.jpg" alt="logo" className=" rounded-circle logo" />
+      <main className="bg-custom1 border-bottom border-2 border-dark  ">
+        <section className="d-flex flex-column align-items-center justify-content-center vh-100 mt-3">
+          <div className="col-12 col-md-8 col-lg-6 d-flex justify-content-center ">
+            <img src="./img/33.jpg" alt="logo" className=" rounded-circle logo wm-50" />
           </div>
-          <h1 className="text-center text-light display-1 text-black subtext ">
+         
+          <h1 className="text-center text-light display-1 text-black subtext textled">
             Top One Burgers
           </h1>
           <div className="col-7 p-3< ">
-            <p className="text-dark text-center subtext h5">
+            <p className="text-dark text-center subtext h5  ">
               Las mejores hamburguesas de la ciudad.
             </p>
           </div>
           <div className="text-center d-flex gap-3 flex-wrap justify-content-center">
           <button className="btn btn-warning" onClick={scrollToHamburguesas}>
-              Menu de hamburguesas!
+              Menú de hamburguesas!
             </button>
             <button className="btn btn-warning">
               <a

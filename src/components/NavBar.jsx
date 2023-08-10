@@ -14,13 +14,16 @@ function NavBar() {
     <div className="collapse navbar-collapse" id="navbarNav">
       <ul className="navbar-nav">
         <li className="nav-item">
-          <a className="nav-link active text" aria-current="page" href="#">Inicio</a>
+          <a className="nav-link active text " aria-current="page" href="#">Inicio</a>
         </li>
         <li className="nav-item">
           <a className="nav-link active text" href="#compra">Menú</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link active text" href="#compra">Compra yá</a>
+          <a className="nav-link active text" 
+                href="https://wa.me/3755390616"
+                target="_blank"
+                rel="noreferrer">Contacto</a>
         </li>
        
       </ul>

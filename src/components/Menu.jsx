@@ -41,7 +41,9 @@ const hamburguesasData = [
 
 const Hamburguesas = () => {
   const [carrito, setCarrito] = useState([]);
-  const [showArrow, setShowArrow] = useState(false); // Estado para controlar la visibilidad de la flecha
+  const [showArrow, setShowArrow] = useState(false);
+  const [filtro, setFiltro] = useState('');
+  const [orden, setOrden] = useState('mayor'); // Estado para controlar el orden de la lista
 
   const compraSectionRef = useRef(null); // Referencia a la sección de compra
 
@@ -107,18 +109,66 @@ const Hamburguesas = () => {
     compraSectionRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
+    // Función para filtrar las hamburguesas por nombre
+    const filtrarHamburguesas = (hamburguesa) => {
+      return hamburguesa.nombre.toLowerCase().includes(filtro.toLowerCase());
+    };
+  
+    // Función para ordenar las hamburguesas por precio de mayor a menor
+    const ordenarHamburguesas = (a, b) => {
+      if (orden === 'mayor') {
+        return b.precio - a.precio;
+      } else {
+        return a.precio - b.precio;
+      }
+    };
+  
   return (
     <>
         
-      <main className="bg-custom1 container border-top border-2 border-dark" id='menu'>
-        <div className= "text-center" >
-          <div className="bg-cont p-3 mt-2">
-            <h1 className="subtext display-3">Menú</h1>
+      <main className="bg-custom1 container p-3 border-left border-start border-end border-dark" id='menu'>
+        <div className= "text-center " >
+          <div className=' bg-cont border-2 border-dark border mb-3'>
+            <h1 className="subtext display-3 m-0 ">Menú</h1>
+            <div className="row  m-3">
 
-            <div className="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3">
-              {hamburguesasData.map((hamburguesa, index) => (
+            <div className=" col-7 d-flex align-items-center justify-content-center ">
+              <input
+                type="text"
+                className="form-control border-dark"
+                placeholder="Buscar hamburguesa..."
+                value={filtro}
+                onChange={(e) => setFiltro(e.target.value)}
+                />
+                </div>
+              <div className='col-5 d-flex align-items-center justify-content-center text'>
+              <div className="w-100 align-items-center ">
                 <div
-                  className="col"
+                  className={`me-3 arrow-radio ${orden === 'mayor' ? 'selected' : ''}`}
+                  onClick={() => setOrden('mayor')}
+                  id=''
+                >
+                  &uarr; <span className='s'>Mayor precio</span> 
+                </div>
+                <div
+                  className={`ms-3 me-2 arrow-radio ${orden === 'menor' ? 'selected' : ''}`}
+                  onClick={() => setOrden('menor')}
+                >
+                  &darr; <span className='s'>Menor precio</span> 
+                </div>
+              </div>
+              </div>
+            </div>
+            </div>
+         
+            
+          <div className="bg-cont p-3 border-2 border-dark border ">
+           
+
+          <div className="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3">
+        {hamburguesasData.filter(filtrarHamburguesas).sort(ordenarHamburguesas).map((hamburguesa, index) => (
+                <div
+                className="col"
                   key={index}
                   onClick={() =>
                     agregarAlCarrito(hamburguesa.nombre, hamburguesa.precio)
@@ -130,11 +180,11 @@ const Hamburguesas = () => {
                       className="card-img-top img-fluid border border-1 border-secondary"
                       alt={hamburguesa.nombre}
                     />
-                    <div className="card-body  text-black">
+                    <div className="card-body  text-black p-2 ">
                       <h5 className="card-title w-100">{hamburguesa.nombre}</h5>
                       <p className="card-text">{hamburguesa.descripcion}</p>
                       <p className="card-text">Precio: ${hamburguesa.precio}</p>
-                      <button className="btn btn-secondary bg-light-50 subtext h-100 w-100">
+                      <button className="btn btn-secondary bg-light-50 subtext h-100 w-100 font">
                         Agregar al Carrito
                       </button>
                     </div>

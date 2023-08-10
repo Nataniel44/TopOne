@@ -45,8 +45,8 @@
   width: 50px;
   height: 50px;
   background-color: #f19a0b;
-  color: #fff;
-  border: 2px solid #fff;
+  color: #000000;
+  border: 1px solid #000000;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -56,20 +56,29 @@
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   transition: background-color 0.2s ease-in-out;
 }
-
+.font{
+  font-size: 12px;
+}
 .arrow-wrapper:hover {
-  background-color: #af7108;
+  background-color: #eba62e;
 }
 
 .arrow {
-  display: flex;
+  position: relative;
+  font-size: 24px;
+  top: -2px;
   font-size: 24px;
 }
-
+.textled{
+  text-shadow: 1px 5px 10px rgb(250, 204, 0)
+}
+.led{
+  box-shadow: 0px 0px 100px rgba(250, 204, 0, 0.788) ;
+}
 /* Animación para que aparezca suavemente */
 @keyframes fadeIn {
   from {
-    opacity: 0;
+    opacity: 0; 
   }
   to {
     opacity: 1;
@@ -87,5 +96,11 @@
     justify-content: center;
     align-items: center;
     gap: 21px;
+  }
+  .arrow-radio{
+    font-size: 25px;
+  }
+  .s{
+    display: none;
   }
 }
