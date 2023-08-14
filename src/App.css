@@ -59,6 +59,9 @@
 .font{
   font-size: 12px;
 }
+.bot{
+  width: 88px;
+}
 .arrow-wrapper:hover {
   background-color: #eba62e;
 }

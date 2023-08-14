@@ -126,32 +126,32 @@ const Hamburguesas = () => {
   return (
     <>
         
-      <main className="bg-custom1 container p-3 border-left border-start border-end border-dark" id='menu'>
-        <div className= "text-center " >
-          <div className=' bg-cont border-2 border-dark border mb-3'>
-            <h1 className="subtext display-3 m-0 ">Menú</h1>
-            <div className="row  m-3">
+      <main className=" container " id='menu'>
+        <div className= "text-center  " >
+          <div className=' bg-cont border-2 fondo border-dark border mb-3 mt-3 rounded text-light p-2'>
+            <h1 className=" display-3 m-1 text ">Menú</h1>
+            <div className="row  ms-3 me-3 mb-1">
 
-            <div className=" col-7 d-flex align-items-center justify-content-center ">
+            <div className=" col-7 d-flex align-items-center justify-content-start ">
               <input
                 type="text"
-                className="form-control border-dark"
+                className="form-control border-dark w-75"
                 placeholder="Buscar hamburguesa..."
                 value={filtro}
                 onChange={(e) => setFiltro(e.target.value)}
                 />
                 </div>
-              <div className='col-5 d-flex align-items-center justify-content-center text'>
-              <div className="w-100 align-items-center ">
+              <div className='col-5 d-flex align-items-center justify-content-end text'>
+              <div className="w-100  ">
                 <div
-                  className={`me-3 arrow-radio ${orden === 'mayor' ? 'selected' : ''}`}
+                  className={` arrow-radio ${orden === 'mayor' ? 'selected' : ''}`}
                   onClick={() => setOrden('mayor')}
                   id=''
                 >
                   &uarr; <span className='s'>Mayor precio</span> 
                 </div>
                 <div
-                  className={`ms-3 me-2 arrow-radio ${orden === 'menor' ? 'selected' : ''}`}
+                  className={`ms-3 arrow-radio ${orden === 'menor' ? 'selected' : ''}`}
                   onClick={() => setOrden('menor')}
                 >
                   &darr; <span className='s'>Menor precio</span> 
@@ -162,10 +162,10 @@ const Hamburguesas = () => {
             </div>
          
             
-          <div className="bg-cont p-3 border-2 border-dark border ">
+          <div className="fondo p-3 border border-1 border-secondary shadow p-3 mb-5 bg-body rounded ">
            
 
-          <div className="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3">
+          <div className="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3 ">
         {hamburguesasData.filter(filtrarHamburguesas).sort(ordenarHamburguesas).map((hamburguesa, index) => (
                 <div
                 className="col"
@@ -174,17 +174,17 @@ const Hamburguesas = () => {
                     agregarAlCarrito(hamburguesa.nombre, hamburguesa.precio)
                   }
                 >
-                  <div className="card bg-warning ">
+                  <div className="card bg-warning  ">
                     <img
                       src={hamburguesa.imagen}
-                      className="card-img-top img-fluid border border-1 border-secondary"
+                      className="card-img-top img-fluid "
                       alt={hamburguesa.nombre}
                     />
                     <div className="card-body  text-black p-2 ">
                       <h5 className="card-title w-100">{hamburguesa.nombre}</h5>
                       <p className="card-text">{hamburguesa.descripcion}</p>
                       <p className="card-text">Precio: ${hamburguesa.precio}</p>
-                      <button className="btn btn-secondary bg-light-50 subtext h-100 w-100 font">
+                      <button className="btn btn-secondary bg-light-50 subtext h-100 w-100 font ">
                         Agregar al Carrito
                       </button>
                     </div>

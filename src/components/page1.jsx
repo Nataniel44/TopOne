@@ -3,6 +3,7 @@ import NavBar from './NavBar';
 import  { useRef } from 'react';
 import Hamburguesas from './Menu';
 
+
 const Page1 = () => {
   const hamburguesasRef = useRef(null);
 
@@ -13,14 +14,14 @@ const Page1 = () => {
   return (
     <>
       <NavBar/>  
-      <main className="bg-custom1 border-bottom border-2 border-dark  ">
-        <section className="d-flex flex-column align-items-center justify-content-center vh-100 mt-3">
+      <main className="fondomain border-bottom border-2 border-dark  ">
+        <section className="d-flex flex-column align-items-center justify-content-center vh-100 ">
           <div className="col-12 col-md-8 col-lg-6 d-flex justify-content-center ">
             <img src="./img/33.jpg" alt="logo" className=" rounded-circle logo wm-50" />
           </div>
          
-          <h1 className="text-center text-light display-1 text-black subtext textled">
-            Top One Burgers
+          <h1 className="text-center  display-1   letralogo text-warning d-flex flex-wrap flex-column ">
+            Top One <br /> <span className=' display-4  text-dark'> Burger's</span>
           </h1>
           <div className="col-7 p-3< ">
             <p className="text-dark text-center subtext h5  ">
@@ -42,11 +43,12 @@ const Page1 = () => {
             </button>
           </div>
         </section>
-        <div ref={hamburguesasRef} className='pt-5' id='compra'>
+        <div ref={hamburguesasRef} className='' id='compra'>
           
         </div>
 
       </main>
+      
       
         <Hamburguesas />
       

@@ -13,7 +13,21 @@ body {
   
   transition: transform 0.2s ease;
 }
-
+.letralogo{
+  font-family: 'Bangers', cursive;
+}
+.navbar-collapse{
+  justify-content: center;
+}
+.fondomain{
+  background-image: url("../img-redux/fondo2.jpg");
+  background-size: cover;
+}
+.fondo{
+  font-family: 'Anton', sans-serif;
+  background-image: url("../img-redux/fondo1.jpg");
+  background-size:contain;
+}
 .arrow-radio.selected {
   color: #ffffff; /* Cambia el color al que prefieras */
   transform: scale(1.2); /* Cambia la escala para resaltar la selección */
