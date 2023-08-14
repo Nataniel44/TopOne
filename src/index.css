@@ -13,6 +13,7 @@ body {
   
   transition: transform 0.2s ease;
 }
+
 .letralogo{
   font-family: 'Bangers', cursive;
 }
@@ -20,9 +21,10 @@ body {
   justify-content: center;
 }
 .fondomain{
-  background-image: url("../img-redux/fondo2-min.jpg");
-  background-size: cover;
+  background-image: url("../img-redux/fondopc.jpg");
+  background-size:cover;
 }
+
 .fondo{
   font-family: 'Anton', sans-serif;
   background-image: url("../img-redux/fondo1-min.jpg");
