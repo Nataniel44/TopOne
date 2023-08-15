@@ -16,16 +16,13 @@ const Page1 = () => {
       <NavBar/>  
       <main className="fondomain border-bottom border-2 border-dark fondopc ">
         <section className="d-flex flex-column align-items-center justify-content-center vh-100 ">
-          <div className="col-12 col-md-8 col-lg-6 d-flex justify-content-center ">
-            <img src="./img/33.jpg" alt="logo" className=" rounded-circle logo wm-50" />
-          </div>
-         
+        
           <h1 className="text-center  display-1   letralogo text-warning d-flex flex-wrap flex-column ">
-            Top One <br /> <span className=' display-4  text-dark'> Burger's</span>
+            Top One <br /> <span className=' display-4  text-dark'> Burges's</span>
           </h1>
           <div className="col-7 p-3< ">
-            <p className="text-light text-center subtext h5  ">
-              Las mejores hamburguesas de la ciudad.
+            <p className="text-light text-center subtext  fs-5 ">
+              Las mejores <span className='text-warning'> hamburguesas</span> <br /> de la ciudad.
             </p>
           </div>
           <div className="text-center d-flex gap-3 flex-wrap justify-content-center">

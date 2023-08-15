@@ -3,37 +3,37 @@ import { useState, useRef, useEffect } from 'react';
 const hamburguesasData = [
   {
     nombre: 'Classic',
-    precio: 1000,
+    precio: 1100,
     imagen: './img-redux/classic.jpg',
   },
   {
     nombre: 'Argenta',
-    precio: 1200,
+    precio: 1300,
     imagen: './img-redux/argen.jpg',
   },
   {
     nombre: 'Veggie',
-    precio: 1000,
+    precio: 1100,
     imagen: './img-redux/veggie.jpg',
   },
   {
     nombre: 'Rúcula y parmesano',
-    precio: 1200,
+    precio: 1300,
     imagen: './img-redux/rucula.jpg',
   },
   {
     nombre: 'Chesse',
-    precio: 700,
+    precio: 800,
     imagen: './img-redux/cheese.jpg',
   },
   {
     nombre: 'Top One',
-    precio: 1200,
+    precio: 1300,
     imagen: './img-redux/topone.jpg',
   },
   {
     nombre: 'Hulk',
-    precio: 1700,
+    precio: 1800,
     imagen: './img-redux/hulk1.jpg',
   },
   // Agrega más hamburguesas aquí
@@ -126,9 +126,9 @@ const Hamburguesas = () => {
   return (
     <>
         
-      <main className=" container " id='menu'>
+      <section className=" container bg-dark" id='menu'>
         <div className= "text-center  " >
-          <div className=' bg-cont border-2 fondo border-dark border mb-3 mt-3 rounded text-light p-2'>
+          <div className='border-2 fondo border-dark border  rounded text-light p-2'>
             <h1 className=" display-3 m-1 text ">Menú</h1>
             <div className="row  ms-3 me-3 mb-1">
 
@@ -162,7 +162,7 @@ const Hamburguesas = () => {
             </div>
          
             
-          <div className="fondo p-3 border border-1 border-secondary shadow p-3 mb-5 bg-body rounded ">
+          <div className="fondo p-3 border border-2 border-dark shadow p-3 bg-body rounded ">
            
 
           <div className="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3 ">
@@ -174,7 +174,7 @@ const Hamburguesas = () => {
                     agregarAlCarrito(hamburguesa.nombre, hamburguesa.precio)
                   }
                 >
-                  <div className="card bg-warning  ">
+                  <div className="card bg-warning border-dark border-2 ">
                     <img
                       src={hamburguesa.imagen}
                       className="card-img-top img-fluid "
@@ -234,7 +234,7 @@ const Hamburguesas = () => {
             </div>
           </div>
         </div>
-      </main>
+      </section>
 
       {/* Agregamos la flecha que aparecerá cuando haya elementos en el carrito */}
       {showArrow && (

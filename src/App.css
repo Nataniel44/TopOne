@@ -106,10 +106,7 @@
   .s{
     display: none;
   }
-  .fondopc{
-    background-image: url("../img-redux/fondo2-min.jpg");
-    background-size: cover;
-  }
+  
 }
 @media screen and (max-width: 540px) {
 
