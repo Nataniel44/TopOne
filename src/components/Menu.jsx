@@ -202,10 +202,10 @@ const Hamburguesas = () => {
                   </p>
                 </div>
               ) : (
-                <ul className="list-group">
+                <ul className="list-group ">
                   {carrito.map((item, index) => (
                     <li
-                      className="list-group-item d-flex justify-content-between"
+                      className="list-group-item d-flex justify-content-between bg-dark text-light"
                       key={index}
                     >
                       <span>
