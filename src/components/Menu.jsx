@@ -242,7 +242,7 @@ const Hamburguesas = () => {
                       Seleccione una hamburguesa
                     </p>
                     <img
-                      src="/img-redux/carita.svg"
+                      src="./img-redux/carita.svg"
                       alt="Carita triste"
                       width="50"
                       height="50"
