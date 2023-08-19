@@ -15,13 +15,7 @@ const hamburguesasData = [
     ingredientes:
       'Pan, medallon de carne, huevo, queso provoleta, salsa criolla, aderezos.',
   },
-  {
-    nombre: 'Veggie',
-    precio: 1100,
-    imagen: './img-redux/veggie.jpg',
-    ingredientes:
-      'Pan, medallon de carne, queso, jamón, huevo, tomate, lechuga, aderezos.',
-  },
+
   {
     nombre: 'Rúcula y parmesano',
     precio: 1300,
