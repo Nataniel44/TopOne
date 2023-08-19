@@ -4,36 +4,32 @@
 }
 
 body {
-  background-color: #ffffff;
-  
+  background-color: #222;
 }
 .arrow-radio {
-  display: inline-block;
   cursor: pointer;
   font-size: 15px;
-  
+
   transition: transform 0.2s ease;
 }
 
-.letralogo{
+.letralogo {
   font-family: 'Bangers', cursive;
 }
-.navbar-collapse{
+.navbar-collapse {
   justify-content: center;
 }
-.fondomain{
-  background-image: url("../img-redux/fondopc.jpg");
-  background-size:cover;
-  
+.fondomain {
+  background-image: url('../img-redux/fondopc.jpg');
+  background-size: cover;
 }
 
-.fondo{
+.fondo {
   font-family: 'Anton', sans-serif;
- 
- 
-  background-size:contain;
-}
+
+  background-size: contain;
+} 
 .arrow-radio.selected {
-  color: #ffffff; /* Cambia el color al que prefieras */
+  color: #000000; /* Cambia el color al que prefieras */
   transform: scale(1.2); /* Cambia la escala para resaltar la selección */
 }

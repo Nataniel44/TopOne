@@ -1,40 +1,53 @@
 import { useState, useRef, useEffect } from 'react';
-
+import axios from 'axios'; // Importa la librería axios
 const hamburguesasData = [
   {
     nombre: 'Classic',
     precio: 1100,
     imagen: './img-redux/classic.jpg',
+    ingredientes:
+      'Pan, medallon de carne, queso, jamón, huevo, tomate, lechuga, aderezos.',
   },
   {
     nombre: 'Argenta',
     precio: 1300,
     imagen: './img-redux/argen.jpg',
+    ingredientes:
+      'Pan, medallon de carne, huevo, queso provoleta, salsa criolla, aderezos.',
   },
   {
     nombre: 'Veggie',
     precio: 1100,
     imagen: './img-redux/veggie.jpg',
+    ingredientes:
+      'Pan, medallon de carne, queso, jamón, huevo, tomate, lechuga, aderezos.',
   },
   {
     nombre: 'Rúcula y parmesano',
     precio: 1300,
     imagen: './img-redux/rucula.jpg',
+    ingredientes:
+      'Pan, medallon de carne, queso, jamón, huevo, tomate, lechuga, aderezos.',
   },
   {
     nombre: 'Chesse',
     precio: 800,
     imagen: './img-redux/cheese.jpg',
+    ingredientes: 'Pan, medallon de carne, queso cheddar.',
   },
   {
     nombre: 'Top One',
     precio: 1300,
     imagen: './img-redux/topone.jpg',
+    ingredientes:
+      'Pan, medallon de carne, queso, jamón, huevo, tomate, lechuga, aderezos.',
   },
   {
     nombre: 'Hulk',
     precio: 1800,
     imagen: './img-redux/hulk1.jpg',
+    ingredientes:
+      'Pan, medallon de carne, queso, jamón, huevo, tomate, lechuga, aderezos.',
   },
   // Agrega más hamburguesas aquí
 ];
@@ -44,6 +57,8 @@ const Hamburguesas = () => {
   const [showArrow, setShowArrow] = useState(false);
   const [filtro, setFiltro] = useState('');
   const [orden, setOrden] = useState('mayor'); // Estado para controlar el orden de la lista
+
+  const [blueExchangeRate, setBlueExchangeRate] = useState(0); // Estado para almacenar el valor del dólar blue
 
   const compraSectionRef = useRef(null); // Referencia a la sección de compra
 
@@ -84,6 +99,10 @@ const Hamburguesas = () => {
       0
     );
   };
+  const hamburguesasDataUpdated = hamburguesasData.map((hamburguesa) => ({
+    ...hamburguesa,
+    precioDolar: hamburguesa.precio / blueExchangeRate,
+  }));
 
   const realizarPedido = () => {
     let mensaje = '¡Hola! Quiero realizar el siguiente pedido:\n\n';
@@ -99,7 +118,21 @@ const Hamburguesas = () => {
     )}`;
     window.open(urlWhatsapp);
   };
+  useEffect(() => {
+    const fetchExchangeRate = async () => {
+      try {
+        const response = await axios.get(
+          'https://api.bluelytics.com.ar/v2/latest'
+        );
+        const blueRate = response.data.blue.value_sell; // Puedes usar value_avg, value_sell o value_buy según tu necesidad
+        setBlueExchangeRate(blueRate);
+      } catch (error) {
+        console.error('Error fetching exchange rate:', error);
+      }
+    };
 
+    fetchExchangeRate();
+  }, []);
   useEffect(() => {
     setShowArrow(carrito.length > 0 && hamburguesasData.length > 0);
   }, [carrito, hamburguesasData]);
@@ -109,100 +142,115 @@ const Hamburguesas = () => {
     compraSectionRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
-    // Función para filtrar las hamburguesas por nombre
-    const filtrarHamburguesas = (hamburguesa) => {
-      return hamburguesa.nombre.toLowerCase().includes(filtro.toLowerCase());
-    };
-  
-    // Función para ordenar las hamburguesas por precio de mayor a menor
-    const ordenarHamburguesas = (a, b) => {
-      if (orden === 'mayor') {
-        return b.precio - a.precio;
-      } else {
-        return a.precio - b.precio;
-      }
-    };
-  
+  // Función para filtrar las hamburguesas por nombre
+  const filtrarHamburguesas = (hamburguesa) => {
+    return hamburguesa.nombre.toLowerCase().includes(filtro.toLowerCase());
+  };
+
+  // Función para ordenar las hamburguesas por precio de mayor a menor
+  const ordenarHamburguesas = (a, b) => {
+    if (orden === 'mayor') {
+      return b.precio - a.precio;
+    } else {
+      return a.precio - b.precio;
+    }
+  };
+
   return (
     <>
-        
-      <section className=" container bg-dark" id='menu'>
-        <div className= "text-center  " >
-          <div className='border-2 fondo border-dark border  rounded text-light p-2'>
+      <section className=" container  " id="menu">
+        <div className="text-center mb-3">
+          <div className=" fondo bg-light text-dark rounded text-light m-0 mb-2 mt-2 p-1 sombra1">
             <h1 className=" display-3 m-1 text ">Menú</h1>
             <div className="row  ms-3 me-3 mb-1">
-
-            <div className=" col-7 d-flex align-items-center justify-content-start ">
-              <input
-                type="text"
-                className="form-control border-dark w-75"
-                placeholder="Buscar hamburguesa..."
-                value={filtro}
-                onChange={(e) => setFiltro(e.target.value)}
+              <div className=" col-6 d-flex align-items-center justify-content-center ">
+                <input
+                  type="text"
+                  className="form-control border-dark w-75"
+                  placeholder="Buscar..."
+                  value={filtro}
+                  onChange={(e) => setFiltro(e.target.value)}
                 />
-                </div>
-              <div className='col-5 d-flex align-items-center justify-content-end text'>
-              <div className="w-100  ">
+              </div>
+              <div className="col-6 p-0 d-flex align-items-center justify-content-center column  text text-dark">
                 <div
-                  className={` arrow-radio ${orden === 'mayor' ? 'selected' : ''}`}
+                  className={`me-3 ms-3 arrow-radio ${
+                    orden === 'mayor' ? 'selected' : ''
+                  }`}
                   onClick={() => setOrden('mayor')}
-                  id=''
+                  id=""
                 >
-                  &uarr; <span className='s'>Mayor precio</span> 
+                  <span className="s">&uarr; Mayor precio</span>
                 </div>
                 <div
-                  className={`ms-3 arrow-radio ${orden === 'menor' ? 'selected' : ''}`}
+                  className={` arrow-radio ${
+                    orden === 'menor' ? 'selected' : ''
+                  }`}
                   onClick={() => setOrden('menor')}
                 >
-                  &darr; <span className='s'>Menor precio</span> 
+                  <span className="s"> &darr; Menor precio</span>
                 </div>
               </div>
-              </div>
             </div>
-            </div>
-         
-            
-          <div className="fondo p-3 border border-2 border-dark shadow p-3 bg-body rounded ">
-           
+          </div>
 
-          <div className="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3 ">
-        {hamburguesasData.filter(filtrarHamburguesas).sort(ordenarHamburguesas).map((hamburguesa, index) => (
-                <div
-                className="col"
-                  key={index}
-                  onClick={() =>
-                    agregarAlCarrito(hamburguesa.nombre, hamburguesa.precio)
-                  }
-                >
-                  <div className="card bg-warning border-dark border-2 ">
-                    <img
-                      src={hamburguesa.imagen}
-                      className="card-img-top img-fluid "
-                      alt={hamburguesa.nombre}
-                    />
-                    <div className="card-body  text-black p-2 ">
-                      <h5 className="card-title w-100">{hamburguesa.nombre}</h5>
-                      <p className="card-text">{hamburguesa.descripcion}</p>
-                      <p className="card-text">Precio: ${hamburguesa.precio}</p>
-                      <button className="btn btn-secondary bg-light-50 subtext h-100 w-100 font ">
-                        Agregar al Carrito
-                      </button>
+          <div className="fondo p-3 sombra1 p-3 bg-body rounded  ">
+            <div className="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3 ">
+              {hamburguesasDataUpdated
+                .filter(filtrarHamburguesas)
+                .sort(ordenarHamburguesas)
+                .map((hamburguesa, index) => (
+                  <div
+                    className="col"
+                    key={index}
+                    onClick={() =>
+                      agregarAlCarrito(hamburguesa.nombre, hamburguesa.precio)
+                    } // Agrega el precio en pesos al carrito
+                  >
+                    <div className="card bg-warning sombra border-0 ">
+                      <img
+                        src={hamburguesa.imagen}
+                        className="card-img-top img-fluid rounded-top"
+                        alt={hamburguesa.nombre}
+                      />
+                      <div className="card-body  text-black p-2 ">
+                        <h5 className="card-title w-100">
+                          {hamburguesa.nombre}
+                        </h5>
+
+                        <p className="card-text">{hamburguesa.descripcion}</p>
+                        <p className="card-text">
+                          Precio: ${hamburguesa.precioDolar.toFixed(2)} (USD) /
+                          ${hamburguesa.precio.toFixed(2)} (ARS)
+                        </p>
+                        <button className="btn btn-secondary bg-light-50 subtext h-100 w-100 font ">
+                          Agregar al Carrito
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
             </div>
 
-            <div className="mt-4" ref={compraSectionRef} id="compra">
+            <div className="mt-4 " ref={compraSectionRef} id="compra">
               <h3>Carrito de Compras</h3>
               {carrito.length === 0 ? (
-                <div className="div d-flex justify-content-center">
-                  <p className="bg-danger border border-secondary p-1">
+                <div className="div d-flex justify-content-center ">
+                  <p className=" p-1 subtext m-0 d-flex  justify-content-center align-items-center flex-column text-danger fs-2 bg-dark rounded sombra">
                     Tu carrito está vacío
+                    <p className="fs-4 text-light">
+                      Seleccione una hamburguesa
+                    </p>
+                    <img
+                      src="/img-redux/carita.svg"
+                      alt="Carita triste"
+                      width="50"
+                      height="50"
+                    />
                   </p>
                 </div>
               ) : (
-                <ul className="list-group ">
+                <ul className="list-group  ">
                   {carrito.map((item, index) => (
                     <li
                       className="list-group-item d-flex justify-content-between bg-dark text-light"
@@ -225,7 +273,10 @@ const Hamburguesas = () => {
 
               {carrito.length > 0 && (
                 <div className="mt-4">
-                  <h4 className=''>Precio Total: <span className=''> ${calcularPrecioTotal()} </span></h4>
+                  <h4 className="">
+                    Precio Total:{' '}
+                    <span className=""> ${calcularPrecioTotal()} </span>
+                  </h4>
                   <button className="btn btn-success" onClick={realizarPedido}>
                     Realizar Pedido por WhatsApp
                   </button>
@@ -242,7 +293,6 @@ const Hamburguesas = () => {
           <div className="arrow">&#8595;</div>
         </div>
       )}
-
     </>
   );
 };

@@ -51,37 +51,46 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
+
   cursor: pointer;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   transition: background-color 0.2s ease-in-out;
 }
-.font{
+.font {
   font-size: 12px;
 }
-.bot{
+.bot {
   width: 88px;
 }
 .arrow-wrapper:hover {
   background-color: #eba62e;
 }
-
+.sombra1 {
+  -webkit-box-shadow: 0px 0px 12px -3px rgba(255, 255, 255, 1);
+  -moz-box-shadow: 0px 0px 12px -3px rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 12px -3px rgba(255, 255, 255, 1);
+}
+.sombra {
+  -webkit-box-shadow: 7px 7px 16px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 7px 7px 16px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 7px 7px 16px 0px rgba(0, 0, 0, 0.75);
+}
 .arrow {
   position: relative;
   font-size: 24px;
   top: -2px;
   font-size: 24px;
 }
-.textled{
-  text-shadow: 1px 5px 10px rgb(250, 204, 0)
+.textled {
+  text-shadow: 1px 5px 10px rgb(250, 204, 0);
 }
-.led{
-  box-shadow: 0px 0px 100px rgba(250, 204, 0, 0.788) ;
+.led {
+  box-shadow: 0px 0px 100px rgba(250, 204, 0, 0.788);
 }
 /* Animación para que aparezca suavemente */
 @keyframes fadeIn {
   from {
-    opacity: 0; 
+    opacity: 0;
   }
   to {
     opacity: 1;
@@ -100,18 +109,13 @@
     align-items: center;
     gap: 21px;
   }
-  .arrow-radio{
-    font-size: 25px;
-  }
-  .s{
-    display: none;
-  }
-  
 }
 @media screen and (max-width: 540px) {
-
-  .fondopc{
-    background-image: url("../img-redux/fondo2-min.jpg");
+  .column {
+    flex-direction: column;
+  }
+  .fondopc {
+    background-image: url('../img-redux/fondo2-min.jpg');
     background-size: cover;
   }
 }
