@@ -16,7 +16,7 @@ const Page1 = () => {
         <section className="d-flex flex-column align-items-center justify-content-center vh-100 ">
           <h1 className="text-center  display-1   letralogo text-warning d-flex flex-wrap flex-column ">
             Top One <br />{' '}
-            <span className=" display-4  text-dark"> Burges's</span>
+            <span className=" display-4  text-dark"> Burger's</span>
           </h1>
           <div className="col-7 p-3< ">
             <p className="text-light text-center subtext  fs-5 ">
