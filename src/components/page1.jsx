@@ -77,7 +77,7 @@ const Page1 = () => {
                   href="https://www.linkedin.com/in/nataniel-soto-52922726a/"
                   className="text-decoration-none subtext"
                 >
-                  <h5>By: Nata.st44</h5>
+                  <h5>By: Nataniel Soto</h5>
                 </a>
                 <li className="list-inline-item ">
                   <a
