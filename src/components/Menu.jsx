@@ -188,7 +188,7 @@ const Hamburguesas = () => {
             </div>
           </div>
 
-          <div className="fondo p-3 sombra1 p-3 bg-body rounded  ">
+          <div className="fondo p-3 p-3 bg-body rounded  ">
             <div className="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3 ">
               {hamburguesasDataUpdated
                 .filter(filtrarHamburguesas)
