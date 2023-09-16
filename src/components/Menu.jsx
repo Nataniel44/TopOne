@@ -154,7 +154,7 @@ const Hamburguesas = () => {
     <>
       <section className=" container  " id="menu">
         <div className="text-center mb-3">
-          <div className=" fondo bg-light text-dark rounded text-light m-0 mb-2 mt-2 p-1 sombra1">
+          <div className=" fondo bg-light text-dark rounded text-light m-0 mb-2 mt-2 p-1 ">
             <h1 className=" display-3 m-1 text ">Menú</h1>
             <div className="row  ms-3 me-3 mb-1">
               <div className=" col-6 d-flex align-items-center justify-content-center ">
