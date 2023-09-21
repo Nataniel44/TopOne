@@ -166,14 +166,12 @@ const Hamburguesas = () => {
            
 
           <div className="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3 ">
-        {hamburguesasData.filter(filtrarHamburguesas).sort(ordenarHamburguesas).map((hamburguesa, index) => (
-                <div
-                className="col"
-                  key={index}
-                  onClick={() =>
-                    agregarAlCarrito(hamburguesa.nombre, hamburguesa.precio)
-                  }
-                >
+
+          <div className="col" key={index}>
+          <div
+            className="card bg-warning border-dark border-2 "
+            onClick={() => agregarAlCarrito(hamburguesa.nombre, hamburguesa.precio)}
+          >
                   <div className="card bg-warning border-dark border-2 ">
                     <img
                       src={hamburguesa.imagen}
@@ -183,16 +181,22 @@ const Hamburguesas = () => {
                     <div className="card-body  text-black p-2 ">
                       <h5 className="card-title w-100">{hamburguesa.nombre}</h5>
                       <p className="card-text">{hamburguesa.descripcion}</p>
-                      <p className="card-text">Precio: ${hamburguesa.precio}</p>
+                      <p className="card-text">Precio: ${hamburguesa.precio} pesos</p>
+                      {precioEnDolaresBlue !== null && (
+                        <p className="card-text">
+                          Precio en dólares blue: ${precioEnDolaresBlue} dólares
+                        </p>
+                      )}
                       <button className="btn btn-secondary bg-light-50 subtext h-100 w-100 font ">
                         Agregar al Carrito
                       </button>
+                      
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-
+          </div>
             <div className="mt-4" ref={compraSectionRef} id="compra">
               <h3>Carrito de Compras</h3>
               {carrito.length === 0 ? (
