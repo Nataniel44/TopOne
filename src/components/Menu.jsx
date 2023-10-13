@@ -3,14 +3,14 @@ import axios from 'axios'; // Importa la librería axios
 const hamburguesasData = [
   {
     nombre: 'Classic',
-    precio: 1200,
+    precio: 1400,
     imagen: './img-redux/classic.jpg',
     ingredientes:
       'Pan, medallon de carne, queso, jamón, huevo, tomate, lechuga, aderezos.',
   },
   {
     nombre: 'Argenta',
-    precio: 1400,
+    precio: 1600,
     imagen: './img-redux/argen.jpg',
     ingredientes:
       'Pan, medallon de carne, huevo, queso provoleta, salsa criolla, aderezos.',
@@ -18,27 +18,27 @@ const hamburguesasData = [
 
   {
     nombre: 'Rúcula y parmesano',
-    precio: 1400,
+    precio: 1600,
     imagen: './img-redux/rucula.jpg',
     ingredientes:
       'Pan, medallon de carne, queso, jamón, huevo, tomate, lechuga, aderezos.',
   },
   {
     nombre: 'Chesse',
-    precio: 800,
+    precio: 1000,
     imagen: './img-redux/cheese.jpg',
     ingredientes: 'Pan, medallon de carne, queso cheddar.',
   },
   {
     nombre: 'Top One',
-    precio: 1400,
+    precio: 1600,
     imagen: './img-redux/topone.jpg',
     ingredientes:
       'Pan, medallon de carne, queso, jamón, huevo, tomate, lechuga, aderezos.',
   },
   {
     nombre: 'Hulk',
-    precio: 1900,
+    precio: 2100,
     imagen: './img-redux/hulk1.jpg',
     ingredientes:
       'Pan, medallon de carne, queso, jamón, huevo, tomate, lechuga, aderezos.',
